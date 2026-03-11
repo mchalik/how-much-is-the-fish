@@ -2,7 +2,7 @@ import express from 'express';
 
 const app = express();
 
-app.get('/events', (req, res) => {
+app.get('/api/events', (req, res) => {
     console.log('Клиент подключился :)');
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');

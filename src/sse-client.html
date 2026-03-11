@@ -62,7 +62,7 @@
         }
 
         const start = () => {
-            eventSource = new EventSource('http://localhost:3000/events', {
+            eventSource = new EventSource('/api/events', {
                 withCredentials: false
             });
 
