@@ -1,7 +1,9 @@
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import express from 'express';
 
 const app = express();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.get('/api/events', (req, res) => {
     console.log('Клиент подключился :)');
@@ -42,7 +44,7 @@ app.get('/api/events', (req, res) => {
 });
 
 app.get('/', (_req, res) => {
-   res.sendFile(path.join(import.meta.dirname, 'sse-client.html'));
+   res.sendFile(path.join(__dirname, 'sse-client.html'));
 });
 
 app.listen(3000, () => {
